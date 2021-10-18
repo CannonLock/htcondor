@@ -1,7 +1,7 @@
 name: Deploy Web Previews
 on:
   release:
-    types: [published, edited, released]
+    types: [edited]
 
 jobs:
   Build-And-Deploy-Preview:
