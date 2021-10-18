@@ -12,7 +12,7 @@ jobs:
 
       - uses: CannonLock/build_release_page@master
         with:
-          repository: ${{ github.repository_owner }}
+          repository: ${{ github.repository }}
           tag: ${{ github.event.release.tag_name }}
 
       - uses: actions/checkout@v2
