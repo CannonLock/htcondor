@@ -23,7 +23,7 @@ jobs:
 
       - run: |
           mkdir website
-
+          ls
           git clone git@github.com:htcondor/htcondor-web.git ./website
           git checkout -b ${{ env.publish_branch }}
 
