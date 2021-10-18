@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: htcondor/htcondor-web
-          token: ${{ secrets.WEB_KEY }}
+          token: ${{ secrets.HTCONDOR_WEB_DEPLOY_KEY }}
           path: website
           ref: preview-dynamic-updates
 
