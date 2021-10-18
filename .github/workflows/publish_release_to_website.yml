@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-18.04
     env:
       publish_path: _news
+      publish_branch: preview-dynamic-updates
     steps:
 
       - uses: CannonLock/build_release_page@master
@@ -15,17 +16,20 @@ jobs:
           repository: ${{ github.repository }}
           release: ${{ github.event.release.tag_name }}
 
-      - uses: actions/checkout@v2
+      - name: Setup SSH Keys and known_hosts
+        uses: webfactory/ssh-agent@v0.5.3
         with:
-          repository: htcondor/htcondor-web
-          token: ${{ secrets.HTCONDOR_WEB_DEPLOY_KEY }}
-          path: website
-          ref: preview-dynamic-updates
+          ssh-private-key: ${{ secrets.HTCONDOR_WEB_DEPLOY_KEY }}
 
       - run: |
-          mv ./*.md website/_news/
-          cd website
+          mkdir website
 
+          git clone git@github.com:htcondor/htcondor-web.git ./website
+          git checkout -b ${{ env.publish_branch }}
+
+          mv ./*.md ./website/${{ env.publish_path }}
+
+          cd website
           git add .
           git config user.name "Automatic Release Publish"
           git config user.email ""
