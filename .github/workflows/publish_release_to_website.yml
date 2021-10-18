@@ -1,15 +1,36 @@
-name: Deploy Web Previews
+name: Publish Release To Website
 on:
   release:
-    types: [published, edited, released]
+    types: [published, edited]
 
 jobs:
-  Build-And-Deploy-Preview:
+  Publish-Release-To-Website:
     runs-on: ubuntu-18.04
+    env:
+      publish_path: _news
     steps:
 
-      - name: Set env
-        run: |
-          echo "RELEASE_VERSION=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
-          echo "${{ github.event.release.tag_name }}"
+      - uses: CannonLock/build_release_page@master
+        with:
+          repository: ${{ github.repository_owner }}
+          tag: ${{ github.event.release.tag_name }}
+
+      - uses: actions/checkout@v2
+        with:
+          repository: htcondor/htcondor-web
+          token: ${{ secrets.HTCONDOR_WEB_DEPLOY_KEY }}
+          path: website
+          ref: preview-dynamic-updates
+
+      - run: |
+          mv ./*.md website/_news/
+          cd website
+
+          git add .
+          git config user.name "Automatic Release Publish"
+          git config user.email ""
+          git commit -am "GHA: htcondor/htcondor-web #$GITHUB_RUN_NUMBER"
+          git push --dry-run
+
+
 
