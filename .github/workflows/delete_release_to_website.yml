@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-18.04
     env:
       publish_path: _news
-      publish_branch: master
+      publish_branch: preview-release
       publish_repo_ssh: git@github.com:htcondor/htcondor-web.git
     steps:
 
