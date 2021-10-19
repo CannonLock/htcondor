@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-18.04
     env:
       publish_path: _news
-      publish_branch: preview-dynamic-updates
+      publish_branch: preview-release
+      publish_repo_ssh: git@github.com:htcondor/htcondor-web.git
     steps:
 
       - name: Setup SSH Keys and known_hosts
@@ -17,7 +18,7 @@ jobs:
           ssh-private-key: ${{ secrets.HTCONDOR_WEB_DEPLOY_KEY }}
 
       - run: |
-          git clone git@github.com:htcondor/htcondor-web.git ./
+          git clone ${{ env.publish_repo_ssh }} ./
           git fetch --all
           git checkout -b ${{ env.publish_branch }} origin/${{ env.publish_branch }}
 
@@ -26,5 +27,5 @@ jobs:
           git add .
           git config user.name "Automatic Release Publish"
           git config user.email ""
-          git commit -am "GHA: htcondor/htcondor-web #$GITHUB_RUN_NUMBER"
+          git commit -am "GHA: Delete Release"
           git push

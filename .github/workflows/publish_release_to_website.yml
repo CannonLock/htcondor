@@ -8,13 +8,15 @@ jobs:
     runs-on: ubuntu-18.04
     env:
       publish_path: _news
-      publish_branch: preview-dynamic-updates
+      publish_branch: preview-release
+      publish_repo_ssh: git@github.com:htcondor/htcondor-web.git
     steps:
 
-      - uses: CannonLock/build_release_page@master
+      - name: Build the release page a put it in current directory
+        uses: CannonLock/build_release_page@master
         with:
           repository: ${{ github.repository }}
-          release: ${{ github.event.release.tag_name }}
+          tag_name: ${{ github.event.release.tag_name }}
 
       - name: Setup SSH Keys and known_hosts
         uses: webfactory/ssh-agent@v0.5.3
@@ -23,16 +25,16 @@ jobs:
 
       - run: |
           mkdir website
-
-          git clone git@github.com:htcondor/htcondor-web.git ./website
+          git clone ${{ env.publish_repo_ssh }} ./website
           cd website
           git fetch --all
           git checkout -b ${{ env.publish_branch }} origin/${{ env.publish_branch }}
 
-          mv ../*.md ./${{ env.publish_path }}
+          mv ../*.md ./${{ env.publish_path }} # Move markdown created by the build_release_page action to branch
 
+          # Publish the article
           git add .
           git config user.name "Automatic Release Publish"
           git config user.email ""
-          git commit -am "GHA: htcondor/htcondor-web #$GITHUB_RUN_NUMBER"
+          git commit -am "GHA: Publish Release https://github.com/htcondor/htcondor/releases/tag/${{ github.event.release.tag_name }}"
           git push
