@@ -1,7 +1,7 @@
 name: Publish Release To Website
 on:
   release:
-    types: [published, edited]
+    types: [deleted]
 
 jobs:
   Publish-Release-To-Website:
@@ -11,25 +11,17 @@ jobs:
       publish_branch: preview-dynamic-updates
     steps:
 
-      - uses: CannonLock/build_release_page@master
-        with:
-          repository: ${{ github.repository }}
-          release: ${{ github.event.release.tag_name }}
-
       - name: Setup SSH Keys and known_hosts
         uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.HTCONDOR_WEB_DEPLOY_KEY }}
 
       - run: |
-          mkdir website
-
-          git clone git@github.com:htcondor/htcondor-web.git ./website
-          cd website
+          git clone git@github.com:htcondor/htcondor-web.git ./
           git fetch --all
           git checkout -b ${{ env.publish_branch }} origin/${{ env.publish_branch }}
 
-          mv ../*.md ./${{ env.publish_path }}
+          git rm -f ./${{ env.publish_path }}/${{ github.event.release.tag_name }}.md
 
           git add .
           git config user.name "Automatic Release Publish"
