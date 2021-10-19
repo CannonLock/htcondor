@@ -29,13 +29,12 @@ jobs:
           mv ./*.md ./website/${{ env.publish_path }}
 
           cd website
-          git checkout -b ${{ env.publish_branch }}
-          git pull
+          git fetch --all
+          git checkout -b ${{ env.publish_branch }} origin/${{ env.publish_branch }}
           git add .
           git config user.name "Automatic Release Publish"
           git config user.email ""
           git commit -am "GHA: htcondor/htcondor-web #$GITHUB_RUN_NUMBER"
-          git push --set-upstream origin ${{ env.publish_branch }}
           git push
 
 
