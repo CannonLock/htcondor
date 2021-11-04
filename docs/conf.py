@@ -84,12 +84,6 @@ rst_epilog = """
 # directories to ignore when looking for source files.
 exclude_patterns = ['_build', 'extensions', 'utils']
 
-# Add any extra paths that contain custom files (such as robots.txt or
-# .htaccess) here, relative to this directory. These files are copied
-# directly to the root of the documentation.
-print("Fun")
-html_extra_path = ['./google76f04192afc2088e.html']
-
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
 # default_role = None
