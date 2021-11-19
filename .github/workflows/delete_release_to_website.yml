@@ -1,0 +1,31 @@
+name: Publish Release To Website
+on:
+  release:
+    types: [deleted]
+
+jobs:
+  Publish-Release-To-Website:
+    runs-on: ubuntu-18.04
+    env:
+      publish_path: _news
+      publish_branch: master
+      publish_repo_ssh: git@github.com:htcondor/htcondor-web.git
+    steps:
+
+      - name: Setup SSH Keys and known_hosts
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.HTCONDOR_WEB_DEPLOY_KEY }}
+
+      - run: |
+          git clone ${{ env.publish_repo_ssh }} ./
+          git fetch --all
+          git checkout -b build-release-page origin/${{ env.publish_branch }}
+
+          git rm -f ./${{ env.publish_path }}/${{ github.event.release.tag_name }}.md
+
+          git add .
+          git config user.name "Automatic Release Publish"
+          git config user.email ""
+          git commit -am "GHA: Delete Release"
+          git push origin build-release-page:${{ env.publish_branch }}
