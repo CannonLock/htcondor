@@ -1,4 +1,4 @@
-name: Publish Release To Website
+name: Delete Release From Website
 on:
   release:
     types: [deleted]
@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-18.04
     env:
       publish_path: _news
-      publish_branch: master
+      publish_branch: preview-test
       publish_repo_ssh: git@github.com:htcondor/htcondor-web.git
     steps:
 
