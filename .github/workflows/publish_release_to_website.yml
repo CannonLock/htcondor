@@ -1,7 +1,7 @@
 name: Publish Release To Website
 on:
   release:
-    types: [published, edited]
+    types: [released, edited]
 
 jobs:
   Publish-Release-To-Website:
