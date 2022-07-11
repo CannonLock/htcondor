@@ -437,7 +437,7 @@ FileTransfer::SimpleInit(ClassAd *Ad, bool want_check_perms, bool is_server,
 
 	// If we are spooling, we want to ignore URLs
 	// We want the file transfer plugin to be invoked at the starter, not the schedd.
-	// See https://condor-wiki.cs.wisc.edu/index.cgi/tktview?tn=2162
+	// See https://htcondor.org/wiki-archive/tickets/?ticket=2162
 	if (IsClient() && simple_init && is_spool) {
 		InputFiles->rewind();
 		const char *x;

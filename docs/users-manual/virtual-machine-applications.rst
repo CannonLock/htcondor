@@ -182,7 +182,7 @@ Note that if snapshot disks are requested and file transfer is not being
 used, the **vmware_dir** setting given in the submit description file
 should not contain any symbolic link path components, as described on
 the
-`https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=HowToAdminRecipes <https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=HowToAdminRecipes>`_
+`https://htcondor.org/wiki-archive/pages/HowToAdminRecipes/ <https://htcondor.org/wiki-archive/pages/HowToAdminRecipes/>`_
 page under the answer to why VMware jobs with symbolic links fail.
 
 Here is a sample submit description file for a VMware virtual machine:

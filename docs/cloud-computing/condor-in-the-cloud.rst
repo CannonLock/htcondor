@@ -94,7 +94,7 @@ A seed image is simply an image with:
 * a small script to set ``TCP_FORWARDING_HOST`` to the instance's public
   IP adress when the instance starts up.
 
-More-detailed `instructions <https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=CondorInTheCloudSeedConstruction>`_
+More-detailed `instructions <https://htcondor.org/wiki-archive/pages/CondorInTheCloudSeedConstruction/>`_
 for constructing a seed node on AWS are available.  A RHEL 7.6 image built
 according to those instructions is available as public AMI
 ``ami-00eeb25291cfad66f``.

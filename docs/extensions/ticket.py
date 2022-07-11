@@ -12,7 +12,7 @@ Roles are more useful for inline text, which is what we need for tickets.
 class Ticket(Directive):
     required_arguments = 1
     def run(self):
-        ticket_url = "<a href=\"https://htcondor-wiki.cs.wisc.edu/index.cgi/tktview?tn=" + str(self.arguments[0]) + "\" target=\"blank\">link text</a>"
+        ticket_url = "<a href=\"https://htcondor.org/wiki-archive/tickets/?ticket=" + str(self.arguments[0]) + "\" target=\"blank\">link text</a>"
         paragraph_node = nodes.paragraph(text=ticket_url)
         return [paragraph_node]
 
@@ -32,7 +32,7 @@ def make_link_node(rawtext, app, type, slug, options):
     :param slug: ID of the ticket to link to
     :param options: Options dictionary passed to role func.
     """
-    base = "https://htcondor-wiki.cs.wisc.edu/index.cgi/tktview?tn="
+    base = "https://htcondor.org/wiki-archive/tickets/?ticket="
     ref = base + slug
     # set_classes(options)
     node = nodes.reference(rawtext, "(Ticket #" + slug + ")", refuri=ref, **options)

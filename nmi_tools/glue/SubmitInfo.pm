@@ -41,7 +41,7 @@ our %build_and_test_sets = (
 	# list to which we default.
 	
 	# NOTE: Keep the stable or developer release branches synchronized with
-	# https://condor-wiki.cs.wisc.edu/index.cgi/wiki?p=DeveloperReleasePlan
+	# https://htcondor.org/htcondor/release-plan/
 	'official_ports' => [],
 	
 	# NMI will need builds on a set of platforms that we do not provide in our
@@ -170,7 +170,7 @@ our %submit_info = (
 	# <the big pile of other arguments>
 	# 
 	# See:
-	# https://condor-wiki.cs.wisc.edu/index.cgi/wiki?p=BuildingCondorOnUnix
+	# https://htcondor.org/wiki-archive/pages/BuildingHtcondorOnUnix/
 	##########################################################################
 	'default_minimal_platform'	=> {
 		'build' => {

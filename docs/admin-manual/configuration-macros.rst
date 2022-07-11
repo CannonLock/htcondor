@@ -2439,7 +2439,7 @@ using a shared file system`.
     particular file system where machines advertise an additional
     ClassAd attribute and the job requires machines with the attribute,
     as described on the question within the
-    `https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=HowToAdminRecipes <https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=HowToAdminRecipes>`_
+    `https://htcondor.org/wiki-archive/pages/HowToAdminRecipes/ <https://htcondor.org/wiki-archive/pages/HowToAdminRecipes/>`_
     page for how to run jobs on a subset of machines that have required
     software installed.
 

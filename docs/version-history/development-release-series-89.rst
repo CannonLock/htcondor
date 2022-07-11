@@ -19,7 +19,7 @@ Release Notes:
   the affected key(s) before the first byte causing the problem, which
   will allow existing tokens to continue to work, but is, perhaps
   substantially, less cryptographically secure.  For more information,
-  see https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=UpgradingToEightNineThirteen.
+  see https://htcondor.org/wiki-archive/pages/UpgradingToEightNineThirteen/.
   :jira:`295`
   :jira:`369`
 

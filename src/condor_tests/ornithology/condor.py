@@ -549,7 +549,7 @@ class Condor:
         """
         projection = projection or []
 
-        # TODO: we would like this to use Collector.directQuery, but it can't because of https://htcondor-wiki.cs.wisc.edu/index.cgi/tktview?tn=7420
+        # TODO: we would like this to use Collector.directQuery, but it can't because of https://htcondor.org/wiki-archive/tickets/?ticket=7420
 
         with self.use_config():
             daemon_location = self.get_local_collector().locate(daemon_type)

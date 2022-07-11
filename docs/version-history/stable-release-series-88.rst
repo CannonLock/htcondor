@@ -541,7 +541,7 @@ Release Notes:
 -  For *condor_annex* users: Amazon Web Services is deprecating support for
    the Node.js 8.10 runtime used by *condor_annex*.  If you ran the *condor_annex*
    setup command with a previous version of HTCondor, you should update your
-   setup to use the new runtime.  `Instructions <https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=HowToUpgradeTheAnnexRuntime>`_
+   setup to use the new runtime.  `Instructions <https://htcondor.org/wiki-archive/pages/HowToUpgradeTheAnnexRuntime/>`_
    are available.
    :ticket:`7400`
 

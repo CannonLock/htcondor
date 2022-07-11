@@ -8,7 +8,7 @@ that many 8.8 pools will require explicit administrator intervention after
 the upgrade.**
 
 **If you’re upgrading from an 8.9 release**, read the
-`specific instructions for that <https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=UpgradingFromEightNineToNineZero>`_, instead.
+`specific instructions for that <https://htcondor.org/wiki-archive/pages/UpgradingFromEightNineToNineZero/>`_, instead.
 
 The following steps will help you determine if you need to make changes,
 and if so, which ones.

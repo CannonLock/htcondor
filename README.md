@@ -34,7 +34,7 @@ to join us.
 [Materials from past meetings](https://research.cs.wisc.edu/htcondor/past_condor_weeks.html)
 include talks from science and industry, plus useful tutorials.
 
-[HTCondor Wiki](http://condor-wiki.cs.wisc.edu/index.cgi/wiki) contains FAQs,
+[HTCondor Wiki](https://htcondor.org/wiki-archive/pages/WikiIndex/) contains FAQs,
 bug tickets, and more.
 
 # LICENSE

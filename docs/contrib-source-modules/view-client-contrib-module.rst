@@ -48,7 +48,7 @@ Step-by-Step Installation of the HTCondorView Client
    browser. This directory is referred to as the ``VIEWDIR`` directory.
 #. Download the *view_client* contrib module. Follow links for contrib
    modules from the wiki at
-   `https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki <https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki>`_.
+   `https://htcondor.org/wiki-archive/pages/WikiIndex/ <https://htcondor.org/wiki-archive/pages/WikiIndex/>`_.
 #. Unpack or untar this contrib module into the directory ``VIEWDIR``.
    This creates several files and subdirectories. Further unpack the jar
    file within the ``VIEWDIR`` directory with:

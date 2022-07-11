@@ -4,7 +4,7 @@ Introduction
 Contrib modules are stand alone, separate pieces of code that work
 together with HTCondor to accomplish some task. These modules are
 available by following links from the wiki at
-`https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki <https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki>`_.
+`https://htcondor.org/wiki-archive/pages/WikiIndex/ <https://htcondor.org/wiki-archive/pages/WikiIndex/>`_.
 Documentation for these modules is either here and identified as a
 contrib module, or may be within the module itself.
 

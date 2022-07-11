@@ -1973,7 +1973,7 @@ the DAGMan language introduces the concept of graph splicing.
 Because splices are simpler in some ways than sub-DAGs, they are
 generally preferred unless certain features are needed that are only
 available with sub-DAGs. This document:
-`https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=SubDagsVsSplices <https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=SubDagsVsSplices>`_
+`https://htcondor.org/wiki-archive/pages/SubDagsVsSplices/ <https://htcondor.org/wiki-archive/pages/SubDagsVsSplices/>`_
 explains the pros and cons of splices and external sub-DAGs, and should
 help users decide which alternative is better for their application.
 

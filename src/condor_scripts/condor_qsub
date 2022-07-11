@@ -771,7 +771,7 @@ if [ -n "$environment" ]; then
 fi
 if [ -n "$rerun_flag" ]; then
 	if [ "$(echo $rerun_flag | cut -c 1 | tr a-z A-Z)" = "N" ]; then 
-# https://htcondor-wiki.cs.wisc.edu/index.cgi/wiki?p=HowToAvoidJobRestarts
+# https://htcondor.org/wiki-archive/pages/HowToAvoidJobRestarts/
 		rerun_string="( NumJobStarts == 0 )"
 # TJ says that JobCurrenStartExecutingDate might be better. Sam is inclind to agree, but needs to do more investigation
 #		rerun_string="( ( CompletionDate =?= 0 ) && ( JobCurrentStartExecutingDate =?= UNDEFINED ) )"
